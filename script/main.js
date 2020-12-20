@@ -1,8 +1,9 @@
+"use strict";
+
+// hamburger navigacio 
 let cbOpen = true;
-function myFunction() {
+function hamburgerNav() {
  
-   
-   
     if(cbOpen==false)//ha zarva van
     {
         document.querySelector("#nav-container").classList.remove("nav-open");
@@ -25,11 +26,9 @@ function myFunction() {
     
   }
  
- 
-
-  var slideIndex = 0;
-showSlides();
-
+// fooldal hatter kepek animacioja
+var slideIndex = 0;
+  
 function showSlides() {
   var i;
   var slides = document.getElementsByClassName("mySlides");
@@ -46,5 +45,33 @@ function showSlides() {
   dots[slideIndex-1].className += " active";
   setTimeout(showSlides, 2500); 
 } 
+showSlides();
 
+
+// adatbazis bekeres json filebol
+let _images = [];
+
+async function loadData() {
+  let response = await fetch("json/images.json");
+  let jsonData = await response.json();
+  _images = jsonData;
+  console.log(_images);
+
+  appendImage(_images)
+}
+
+loadData();
+
+
+function appendImage(images) {
+  let htmlTemplate = "";
+ 
+  for (let image of images) 
+  {
+    htmlTemplate += `<a href="${image.image_link}" data-lightbox="mygallery" class=" gallery-img-effect">
+    <img class="gallery-img" src="${image.image_link}"></a>`;
+  }
+  document.querySelector(".gallery-img-container").innerHTML = htmlTemplate;
+
+}
 
