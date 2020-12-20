@@ -55,14 +55,12 @@ async function loadData() {
   let response = await fetch("json/images.json");
   let jsonData = await response.json();
   _images = jsonData;
-  console.log(_images);
-
   appendImage(_images)
 }
 
 loadData();
 
-
+// diolay images vagyis az osszes kep vetitese
 function appendImage(images) {
   let htmlTemplate = "";
  
@@ -75,3 +73,24 @@ function appendImage(images) {
 
 }
 
+
+
+
+// MAPBOX API
+mapboxgl.accessToken = 'pk.eyJ1Ijoia2VyZ2VyZXMiLCJhIjoiY2s3ZDE2OWptMGNlcDNucHE0dTJzaXRubyJ9.n8mW2tGizEW9Hwvu26iG9g';
+var map = new mapboxgl.Map({
+  container: 'map',
+  style: 'mapbox://styles/kergeres/ckixmhzgr3vfg19mqq4edgan9',
+  zoom: 10.5,
+  center: [19.177830, 47.619220],
+});
+var marker = new mapboxgl.Marker({
+    color: "#B89047",
+    scale: "1.5"
+})
+.setLngLat([19.177830, 47.619220])
+.addTo(map)
+map.addControl(new mapboxgl.NavigationControl())
+map.scrollZoom.disable();
+
+// MAPBOX API vége

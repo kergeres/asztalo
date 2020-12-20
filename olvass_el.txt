@@ -1,0 +1,8 @@
+szineket konnyu varialni a css-: root miatt. 
+--var yellow a fo szin ls ha szt atalitod akkor minden mas is allitodik KIVEVE
+a galeria navigacios nyilai
+
+
+
+jolenne a kepeket amik a geleriaba mennek valami 4:3 aranyban kesziteni,
+vagy olyan aminek a "thumbnailje" jol nez ki az 1:1 galeriaban
