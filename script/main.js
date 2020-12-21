@@ -30,13 +30,11 @@ function hamburgerNav() {
           cbOpen = true;
         });
         cbOpen = false;
-    }
-    
-    
+    }  
   }
  
 // fooldal hatter kepek animacioja
-var slideIndex = 0;
+let slideIndex = 0;
   
 function showSlides() {
   var i;
@@ -66,25 +64,51 @@ async function loadData() {
   let response = await fetch("json/images.json");
   let jsonData = await response.json();
   _images = jsonData;
-  appendImage(_images)
+  console.log(_images);
+  appendImage(_images);
+  
 }
-
 loadData();
+
+
+
 
 // diolay images vagyis az osszes kep vetitese
 function appendImage(images) {
   let htmlTemplate = "";
+  let showMoreButton = "<button onclick='appendImagesMore(_images)' class='loadmore_btn'>Több Kép</button>"
  
   for (let image of images) 
   {
-    htmlTemplate += `<a href="${image.image_link}" data-lightbox="mygallery" class=" gallery-img-effect">
-    <img class="gallery-img" src="${image.image_link}"></a>`;
+    
+    if (image.id =="9")
+    {
+      document.querySelector(".gallery-img-container").innerHTML =  htmlTemplate + showMoreButton ;
+      
+    }
+    else{
+      htmlTemplate += `<a href="${image.image_link}" data-lightbox="mygallery" class=" gallery-img-effect">
+      <img class="gallery-img" src="${image.image_link}"></a>`;
+    }
+    
   }
-  document.querySelector(".gallery-img-container").innerHTML = htmlTemplate;
-
+ 
 }
 
-
+// az osszes kép metoltése a tobb kep gomb megnyomassal 
+function appendImagesMore(images)
+{
+  console.log("mukodi");
+  let htmlTemplate = "";
+  let showMoreButton = "<button onclick='appendImage(_images)' class='loadmore_btn'>Kevesebb Kép</button>"
+ 
+  for (let image of images) 
+  {
+   htmlTemplate += `<a href="${image.image_link}" data-lightbox="mygallery" class=" gallery-img-effect">
+   <img class="gallery-img" src="${image.image_link}"></a>`;
+   document.querySelector(".gallery-img-container").innerHTML =  htmlTemplate + showMoreButton;
+  }
+}
 
 
 // MAPBOX API
