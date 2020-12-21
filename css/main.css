@@ -299,7 +299,7 @@ h1 {
 }
 
 .gallery-img-container {
-    max-width: 1000px;
+    max-width: 960px;
     margin: 0 auto;
     align-items: center;
 
@@ -324,6 +324,16 @@ h1 {
     perspective-origin: center;
 }
 
+.loadmore_btn {
+    height: 300px;
+    width: 90%;
+    margin: 20px 15px;
+    border: none;
+    box-shadow: 2px 2px 7px 0px rgba(0, 0, 0, 0.6);
+    background-color: var(--yellow);
+    cursor: pointer;
+    font-size: 20px;
+}
 
 .gallery-img:hover {
     transform: scale(1.15);
@@ -468,8 +478,7 @@ a {
     }
 
     .header-logoD {
-
-        width: 80px;
+        height: 100%;
         position: absolute;
         display: block;
     }
@@ -509,11 +518,7 @@ a {
     .loadmore_btn {
         height: 200px;
         width: 200px;
-        margin: 20px 15px;
-        border: none;
-        box-shadow: 2px 2px 7px 0px rgba(0, 0, 0, 0.6);
-        background-color: var(--yellow);
-        cursor: pointer;
+
     }
 
     footer {

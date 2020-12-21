@@ -6,3 +6,13 @@ a galeria navigacios nyilai
 
 jolenne a kepeket amik a geleriaba mennek valami 4:3 aranyban kesziteni,
 vagy olyan aminek a "thumbnailje" jol nez ki az 1:1 galeriaban
+
+
+ami még kell:
+google analitics-et beállítani:
+
+olyanok amik "owner"-fuggo beallitasok:
+maps: locationt beallitani a mapboxban
+footer adatok: instagram, maps, telefonszam, emailcim
+valodi kepek feltoltese, bemutatkozas irasa
+

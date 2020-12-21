@@ -64,7 +64,7 @@ async function loadData() {
   let response = await fetch("json/images.json");
   let jsonData = await response.json();
   _images = jsonData;
-  console.log(_images);
+
   appendImage(_images);
   
 }
@@ -81,7 +81,7 @@ function appendImage(images) {
   for (let image of images) 
   {
     
-    if (image.id =="9")
+    if (image.id =="8")
     {
       document.querySelector(".gallery-img-container").innerHTML =  htmlTemplate + showMoreButton ;
       
@@ -98,9 +98,9 @@ function appendImage(images) {
 // az osszes kép metoltése a tobb kep gomb megnyomassal 
 function appendImagesMore(images)
 {
-  console.log("mukodi");
+ 
   let htmlTemplate = "";
-  let showMoreButton = "<button onclick='appendImage(_images)' class='loadmore_btn'>Kevesebb Kép</button>"
+  let showMoreButton = "<a href='#munkaink'><button onclick='appendImage(_images)' class='loadmore_btn'>Kevesebb Kép</button></a>";
  
   for (let image of images) 
   {
