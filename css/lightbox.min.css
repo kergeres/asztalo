@@ -33,6 +33,7 @@ body.lb-disable-scrolling {
     height: auto;
     max-width: inherit;
     max-height: none;
+    position: fixed;
 
 }
 
@@ -179,10 +180,7 @@ body.lb-disable-scrolling {
     outline: 0;
     filter: alpha(Opacity=70);
     opacity: .7;
-    -webkit-transition: opacity .2s;
-    -moz-transition: opacity .2s;
-    -o-transition: opacity .2s;
-    transition: opacity .2s
+    position: fixed;
 }
 
 .lb-data .lb-close:hover {

@@ -11,6 +11,7 @@ body.lb-disable-scrolling {
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=80);
   opacity: 0.95;
   display: none;
+  width: 100%;
 }
 
 .lightbox {
@@ -26,11 +27,13 @@ body.lb-disable-scrolling {
 
 .lightbox .lb-image {
   display: block;
-  height: auto;
+  height: auto !important;
   max-width: inherit;
   max-height: none;
   border-radius: 1px;
   box-shadow: 2px 2px 7px 0px rgba(0, 0, 0, 0.6);
+
+  top: 50px;
 
 }
 
@@ -172,6 +175,8 @@ body.lb-disable-scrolling {
 .lb-data .lb-number {
   display: block;
   clear: left;
+  position: fixed;
+  bottom: 0;
   padding-bottom: 1em;
   font-size: 12px;
   color: #999999;
@@ -181,7 +186,7 @@ body.lb-disable-scrolling {
   display: block;
   position: absolute;
   right: 100px;
-  top: 0px;
+  top: 50px;
   width: 50px;
   height: 50px;
   background: url(../img/close.png) top right no-repeat;
@@ -189,6 +194,7 @@ body.lb-disable-scrolling {
   outline: none;
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=70);
   opacity: 1;
+  position: fixed;
 
 }
 
