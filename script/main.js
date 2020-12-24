@@ -104,6 +104,7 @@ function appendImagesMore(images)
  
   for (let image of images) 
   {
+    
    htmlTemplate += `<a href="${image.image_link}" data-lightbox="mygallery" class=" gallery-img-effect">
    <img class="gallery-img" src="${image.image_link}"></a>`;
    document.querySelector(".gallery-img-container").innerHTML =  htmlTemplate + showMoreButton;
@@ -130,4 +131,10 @@ map.scrollZoom.disable();
 
 // MAPBOX API vége
 
-
+function mindenJog()
+{
+  let datum = new Date();
+  let ev = datum.getFullYear();
+  document.querySelector(".r").innerHTML = `Cégnév © ${ev} <br> minden jog fenntartva`
+}
+mindenJog();
